@@ -1,0 +1,11 @@
+
+// Creating Book, Author based Spring Project
+
+Creation flow:
+
+
+    * Created two classes 1. Book 2. Author
+    * Marked class as entity
+    * Creating relation between Book and Author. (Many to Many) An author can have many books and Many books will have an author.
+    * Check Equality in Hibernate and adding ToString to both Author and Book.
+
