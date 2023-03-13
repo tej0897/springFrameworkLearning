@@ -8,4 +8,16 @@ Creation flow:
     * Marked class as entity
     * Creating relation between Book and Author. (Many to Many) An author can have many books and Many books will have an author.
     * Check Equality in Hibernate and adding ToString to both Author and Book.
+    * Creating a bidirectional relation between a publisher and a book
+    * Publisher can publish many books, a book will have one publisher.
+
+    to access or see the H2 Database in picture (like MySQL),
+    1. go to application.properties and set the following: // when devTools is not installed.
+        spring.h2.console.enabled=true
+    2. run the application. In CMD, we will see H2ConsoleAutoConfig.
+    3. Go to localhost:8080/h2-console and paste the URL copied from the CMD.
+    (url=jdbc:h2:mem:5c85a85b-7351-4778-828b-e90fce7a4b6f)
+
+    We will get the Database structure in pictorial format as requested.
+
 

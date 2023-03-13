@@ -1,28 +1,31 @@
 package com.tejlearning.springFramework.domain;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.util.Objects;
+import java.util.Set;
 
 @Entity
 public class Publisher {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long publisherID;
+    private Long ID;
     private String publisherName;
     private String Address;
     private String City;
     private String state;
     private String zip;
 
+    @OneToMany(mappedBy = "publisher")
+    private Set<Book> books;
+
+
+
     @Override
     public String toString() {
         return "Publisher{" +
-                "publisherID=" + publisherID +
+                "publisherID=" + ID +
                 ", publisherName='" + publisherName + '\'' +
                 ", Address='" + Address + '\'' +
                 ", City='" + City + '\'' +
@@ -56,12 +59,12 @@ public class Publisher {
         return result;
     }
 
-    public Long getPublisherID() {
-        return publisherID;
+    public Long getID() {
+        return ID;
     }
 
-    public void setPublisherID(Long publisherID) {
-        this.publisherID = publisherID;
+    public void setID(Long ID) {
+        this.ID = ID;
     }
 
     public String getPublisherName() {
